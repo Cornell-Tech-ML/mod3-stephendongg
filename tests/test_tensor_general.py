@@ -64,6 +64,7 @@ def test_one_args(
     t1 = data.draw(tensors(backend=shared[backend]))
     name, base_fn, tensor_fn = fn
     t2 = tensor_fn(t1)
+    print("OKAY IM TESTING!!!")
     for ind in t2._tensor.indices():
         assert_close(t2[ind], base_fn(t1[ind]))
 
@@ -306,7 +307,7 @@ if numba.cuda.is_available():
 
 
 @given(data())
-@settings(max_examples=25)
+@settings(max_examples=26)
 @pytest.mark.parametrize("fn", two_arg)
 @pytest.mark.parametrize("backend", backend_tests)
 def test_two_grad_broadcast(
@@ -343,8 +344,8 @@ def test_permute(backend: str, data: DataObject) -> None:
 def test_mm2() -> None:
     a = minitorch.rand((2, 3), backend=FastTensorBackend)
     b = minitorch.rand((3, 4), backend=FastTensorBackend)
-    c = a @ b
 
+    c = a @ b
     c2 = (a.view(2, 3, 1) * b.view(1, 3, 4)).sum(1).view(2, 4)
 
     for ind in c._tensor.indices():
