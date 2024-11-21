@@ -1,0 +1,69 @@
+============================= test session starts ==============================
+platform darwin -- Python 3.11.9, pytest-8.3.2, pluggy-1.5.0
+rootdir: /Users/stephen/Desktop/Classes2024/MLE/mod3-stephendongg
+configfile: pyproject.toml
+plugins: hypothesis-6.54.0, env-1.1.4
+collected 53 items / 2 deselected / 51 selected
+
+tests/test_tensor_general.py ........................................... [ 84%]
+........                                                                 [100%]
+
+=============================== warnings summary ===============================
+tests/test_tensor_general.py::test_one_args[fast-fn1]
+tests/test_tensor_general.py::test_one_args[fast-fn1]
+  /Users/stephen/Desktop/Classes2024/MLE/mod3-stephendongg/.venv/lib/python3.11/site-packages/numba/parfors/parfor.py:2395: NumbaPerformanceWarning: [1m
+  prange or pndindex loop will not be executed in parallel due to there being more than one entry to or exit from the loop (e.g., an assertion).
+  [1m
+  File "minitorch/fast_ops.py", line 173:[0m
+  [1m    def _map(
+          <source elided>
+          if np.array_equal(out_strides, in_strides) and np.array_equal(out_shape, in_shape):
+  [1m            for i in prange(len(out)):
+  [0m            [1m^[0m[0m
+  [0m
+    warnings.warn(
+
+tests/test_tensor_general.py::test_one_args[fast-fn1]
+tests/test_tensor_general.py::test_one_args[fast-fn1]
+  /Users/stephen/Desktop/Classes2024/MLE/mod3-stephendongg/.venv/lib/python3.11/site-packages/numba/parfors/parfor.py:2395: NumbaPerformanceWarning: [1m
+  prange or pndindex loop will not be executed in parallel due to there being more than one entry to or exit from the loop (e.g., an assertion).
+  [1m
+  File "minitorch/fast_ops.py", line 177:[0m
+  [1m    def _map(
+          <source elided>
+
+  [1m            for out_ordinal_idx in prange(len(out)):
+  [0m            [1m^[0m[0m
+  [0m
+    warnings.warn(
+
+tests/test_tensor_general.py::test_one_derivative[fast-fn1]
+tests/test_tensor_general.py::test_one_derivative[fast-fn6]
+  /Users/stephen/Desktop/Classes2024/MLE/mod3-stephendongg/.venv/lib/python3.11/site-packages/numba/parfors/parfor.py:2395: NumbaPerformanceWarning: [1m
+  prange or pndindex loop will not be executed in parallel due to there being more than one entry to or exit from the loop (e.g., an assertion).
+  [1m
+  File "minitorch/fast_ops.py", line 233:[0m
+  [1m    def _zip(
+          <source elided>
+          ):
+  [1m            for i in prange(len(out)):
+  [0m            [1m^[0m[0m
+  [0m
+    warnings.warn(
+
+tests/test_tensor_general.py::test_one_derivative[fast-fn1]
+tests/test_tensor_general.py::test_one_derivative[fast-fn6]
+  /Users/stephen/Desktop/Classes2024/MLE/mod3-stephendongg/.venv/lib/python3.11/site-packages/numba/parfors/parfor.py:2395: NumbaPerformanceWarning: [1m
+  prange or pndindex loop will not be executed in parallel due to there being more than one entry to or exit from the loop (e.g., an assertion).
+  [1m
+  File "minitorch/fast_ops.py", line 242:[0m
+  [1m    def _zip(
+          <source elided>
+
+  [1m            for out_ordinal_idx in prange(len(out)):
+  [0m            [1m^[0m[0m
+  [0m
+    warnings.warn(
+
+-- Docs: https://docs.pytest.org/en/stable/how-to/capture-warnings.html
+================ 51 passed, 2 deselected, 8 warnings in 25.98s =================
